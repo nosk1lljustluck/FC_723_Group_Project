@@ -57,19 +57,20 @@ class CalculatorBackend:
         Trigonometry:
         sin/cos/tan use degrees input
         asin/acos/atan output degrees
+        Use round function as there is a precision error in trig functions.
         """
         if func == "sin":
-            return math.sin(math.radians(value))
+            return round(math.sin(math.radians(value)), 2)
         if func == "cos":
-            return math.cos(math.radians(value))
+            return round(math.cos(math.radians(value)), 2)
         if func == "tan":
-            return math.tan(math.radians(value))
+            return round(math.tan(math.radians(value)), 2)
         if func == "asin":
-            return math.degrees(math.asin(value))
+            return round(math.degrees(math.asin(value)), 2)
         if func == "acos":
-            return math.degrees(math.acos(value))
+            return round(math.degrees(math.acos(value)), 2)
         if func == "atan":
-            return math.degrees(math.atan(value))
+            return round(math.degrees(math.atan(value)), 2)
 
         #raise error if any other trif function is used
         raise ValueError("Unsupported trig function")
